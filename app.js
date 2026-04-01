@@ -30,7 +30,7 @@ app.get("/listing", async (req, res) => {
   res.render("./listings/index.ejs", { listings });
 });
 
-//route to show create listing
+//route to show create listing form
 app.get("/listing/new", (req, res) => {
   res.render("./listings/new.ejs");
 });
@@ -41,12 +41,34 @@ app.get("/listing/:id", async (req, res) => {
   const listings = await Listing.findById(id);
   res.render("./listings/show.ejs", { listings });
 });
-
+//route to add new listing
 app.post("/listing", async (req, res) => {
-  let newlist = await new Listing(req.body.listing)
+  let newlist = await new Listing(req.body.listing);
   newlist.save();
   res.redirect("/listing");
 });
+
+//route to show create listing form
+app.get("/listing/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  const listing = await Listing.findById(id);
+  res.render("./listings/edit.ejs", { listing });
+});
+
+//route to update the listinnng
+app.put("/listing/:id", async (req, res) => {
+  let { id } = req.params;
+  await Listing.findByIdAndUpdate(id,{...req.body.listing})
+  res.redirect("/listing");
+});
+
+//route tto update the listing
+
+app.delete("/listing/:id", async(req,res)=>{
+let { id } = req.params; 
+await Listing.findByIdAndDelete(id)
+res.redirect("/listing");
+})
 
 app.listen(port, () => {
   console.log("server started easily on port 3000");
