@@ -58,17 +58,17 @@ app.get("/listing/:id/edit", async (req, res) => {
 //route to update the listinnng
 app.put("/listing/:id", async (req, res) => {
   let { id } = req.params;
-  await Listing.findByIdAndUpdate(id,{...req.body.listing})
+  await Listing.findByIdAndUpdate(id, { ...req.body.listing });
   res.redirect("/listing");
 });
 
 //route tto update the listing
 
-app.delete("/listing/:id", async(req,res)=>{
-let { id } = req.params; 
-await Listing.findByIdAndDelete(id)
-res.redirect("/listing");
-})
+app.delete("/listing/:id", async (req, res) => {
+  let { id } = req.params;
+  await Listing.findByIdAndDelete(id);
+  res.redirect("/listing");
+});
 
 app.listen(port, () => {
   console.log("server started easily on port 3000");
