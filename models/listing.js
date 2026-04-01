@@ -6,6 +6,9 @@ let listingSchema = new schema({
     type: String,
     required: true,
   },
+  description: {
+    type: String,
+  },
   img: {
     type: String,
     default: "https://wallpapershome.com/images/pages/pic_h/1128.jpg",
