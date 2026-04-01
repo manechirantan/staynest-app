@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staynest</title>
-</head>
-
+<% layout('./layouts/common.ejs') %>
 <body>
     <ul>
         <h3>all hotels</h3>
-        <form action="/listing/new" method="get">
+        <!-- <form action="/listing/new" method="get">
             <button>create new</button>
-        </form>
+        </form> -->
         <% for(let list of listings){ %>
             <li>
                 <a href="http://localhost:3000/listing/<%= list._id %>">
@@ -22,5 +14,3 @@
             <% } %>
     </ul>
 </body>
-
-</html>

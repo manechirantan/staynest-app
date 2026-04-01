@@ -1,6 +1,19 @@
-.container{
-    background-color: aqua;
+/* navbar */
+.navbar {
+  height: 5rem;
+  background-color: white;
 }
-body{
-    background-color: chartreuse;
+/* logo */
+.fa-earth-americas {
+  color: #ff385c;
+  font-size: 1.8rem;
+}
+.navbar-brand {
+  color: #ff385c !important;
+  font-size: 1.49rem !important;
+  margin-right: 4px;
+  font-weight: 600;
+}
+.nav-link {
+  color: black !important;
 }
