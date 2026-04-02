@@ -1,5 +1,12 @@
 body {
   font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container-fluid {
+  flex: 1;
 }
 
 /* navbar */
@@ -49,8 +56,8 @@ body {
   height: 8rem;
   background-color: #ebebeb;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: space-evenly;
+  justify-content: space-evenly;
+  align-items: center;
 }
 /* card */
 .card {
@@ -58,7 +65,7 @@ body {
   margin-bottom: 2rem !important;
 }
 .card-img-top {
-  border-radius: 1rem !important;
+  border-radius: 1.5rem !important;
   width: 100% !important;
   object-fit: cover !important;
 }
@@ -68,14 +75,33 @@ body {
 .card-body p {
   font-weight: 400 !important;
 }
-.listing-link{
+.listing-link {
   text-decoration: none;
 }
 /* card overlay */
-.card-img-overlay{
+.card-img-overlay {
   opacity: 0;
 }
-.card-img-overlay:hover{
-opacity: 0.2;
-background-color: white;
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+.add-btn {
+  background-color: #ff385c !important;
+  border: none !important;
+}
+.edit-btn {
+  background-color: #ff385c !important;
+  border: none !important;
+}
+/* show page image */
+.show-img {
+  height: 40vh !important;
+}
+.btns {
+  display: flex;
+}
+.show-card {
+  padding-left: 0;
+  padding-right: 0;
 }
