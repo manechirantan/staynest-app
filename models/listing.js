@@ -9,11 +9,14 @@ let listingSchema = new schema({
   description: {
     type: String,
   },
-  img: {
-    type: String,
-    default: "https://wallpapershome.com/images/pages/pic_h/1128.jpg",
-    set: (v) =>
-      v === "" ? "https://wallpapershome.com/images/pages/pic_h/1128.jpg" : v,
+  image: {
+    filename: String,
+    url: {
+      type: String,
+      default: "https://wallpapershome.com/images/pages/pic_h/1128.jpg",
+      set: (v) =>
+        v === "" ? "https://wallpapershome.com/images/pages/pic_h/1128.jpg" : v,
+    },
   },
   price: {
     type: String,
